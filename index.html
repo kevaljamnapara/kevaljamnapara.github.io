@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Keval Jamnapara — Full-Stack Developer & ML Engineer. CS student at LJ Institute building AI-powered apps with Python, JavaScript, and React. Open to internships and freelance.">
+    <meta name="keywords"
+        content="Keval Jamnapara, developer portfolio, Python developer, machine learning, full stack developer, Ahmedabad, React developer, AI developer, internship">
+    <meta name="author" content="Keval Jamnapara">
+    <meta property="og:title" content="Keval Jamnapara — Developer Portfolio">
+    <meta property="og:description"
+        content="Full-Stack Developer & ML Engineer. Building AI-powered web apps with Python, JavaScript, and React.">
+    <meta property="og:image" content="assets/og-preview.png">
+    <meta property="og:url" content="https://kevaljamnapara.github.io/keval/">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Keval Jamnapara — Developer Portfolio">
+    <meta name="twitter:description" content="Full-Stack Developer & ML Engineer building AI-powered web apps.">
+    <title>Keval's Portfolio</title>
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <link rel="apple-touch-icon" href="assets/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- Three.js for 3D -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <!-- GSAP for premium animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <!-- Vanilla Tilt for 3D card tilt -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
+    <!-- Particles.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+</head>
+
+<body>
+    <div id="loader">
+        <div class="loader-text">kevaljamnapara.me</div>
+        <div class="loader-bar">
+            <div class="loader-fill"></div>
+        </div>
+    </div>
+    <div id="scroll-progress"></div>
+
+    <!-- Navigation -->
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <a href="#home" class="nav-logo">
+                    kevaljamnapara.me
+                </a>
+                <ul class="nav-menu" id="mobile-menu">
+                    <li class="nav-item"><a href="#about" class="nav-link mobile-nav-link">about</a></li>
+                    <li class="nav-item"><a href="#skills" class="nav-link mobile-nav-link">skills</a></li>
+                    <li class="nav-item"><a href="#internships" class="nav-link mobile-nav-link">work</a></li>
+                    <li class="nav-item"><a href="#projects" class="nav-link mobile-nav-link">projects</a></li>
+                    <li class="nav-item"><a href="#contact" class="nav-link mobile-nav-link">contact</a></li>
+                </ul>
+                <button class="hamburger" id="hamburger" aria-label="Open navigation menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <canvas id="hero-canvas" style="position: absolute; inset: 0; z-index: 0; pointer-events: none;"></canvas>
+            <div class="hero-grid container" style="position: relative; z-index: 1;">
+                <div class="hero-content">
+                    <div class="status-badge" data-animate>
+                        <span class="pulse-dot"></span>
+                        Available for internships · Summer 2026
+                    </div>
+
+                    <h1 class="hero-title" data-animate>
+                        <div class="hero-name overflow-hidden">
+                            <span class="char">K</span><span class="char">e</span><span class="char">v</span><span
+                                class="char">a</span><span class="char">l</span>
+                        </div>
+                        <div class="hero-name overflow-hidden">
+                            <span class="char">J</span><span class="char">a</span><span class="char">m</span><span
+                                class="char">n</span><span class="char">a</span><span class="char">p</span><span
+                                class="char">a</span><span class="char">r</span><span class="char">a</span><span
+                                class="char">.</span>
+                        </div>
+                    </h1>
+
+                    <p class="hero-subtitle hero-sub" data-animate>
+                        I build AI-powered web apps that actually work —
+                        from a Gemini LLM chatbot to a disease prediction
+                        ML model. CS student, 8.22 CGPA, shipped 5+ real projects.
+                    </p>
+
+                    <div class="hero-buttons hero-cta" data-animate>
+                        <a href="#projects" class="btn btn-primary">→ View Projects</a>
+                        <a href="assets/Keval_Jamnapara_Resume.pdf" target="_blank" class="btn btn-ghost"
+                            style="display: flex; align-items: center; justify-content: center; gap: 8px;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                                <polyline points="7 10 12 15 17 10" />
+                                <line x1="12" y1="15" x2="12" y2="3" />
+                            </svg>
+                            Download Resume
+                        </a>
+                    </div>
+                </div>
+
+                <div class="hero-terminal terminal-block" data-animate>
+                    <div class="terminal-header">
+                        <span class="dot red"></span>
+                        <span class="dot yellow"></span>
+                        <span class="dot green"></span>
+                        <span class="terminal-title">keval@portfolio ~</span>
+                    </div>
+                    <div class="terminal-body" id="terminal-output"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about" data-animate>
+            <div class="container about-grid">
+                <div class="about-content-left">
+                    <h2 class="section-title">About</h2>
+                    <p class="about-text">
+                        I'm a CS student at L.J. Institute of Engineering &amp; Technology
+                        who builds things instead of just studying them.
+                    </p>
+                    <p class="about-text">
+                        In the last 2 years I've shipped: an AI chatbot powered by Google's
+                        Gemini LLM, a disease prediction model using 3 ML algorithms,
+                        a full-stack banking dashboard, and a real-time weather app —
+                        while interning at INFOLABZ IT Services on production ML pipelines.
+                    </p>
+                    <p class="about-text">
+                        I work across the full stack — Python backends, JavaScript frontends,
+                        and ML models in between. I care about code that's clean, products
+                        that are useful, and shipping things that work.
+                    </p>
+                    <p class="about-text">
+                        Currently seeking internship opportunities in Full-Stack Development
+                        or Machine Learning for 2025–2026.
+                    </p>
+
+                    <div class="stats-strip">
+                        <div class="stat-card">
+                            <span class="stat-number" id="stat-projects">5+</span>
+                            <span class="stat-label">Projects Shipped</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-number" id="stat-internships">2</span>
+                            <span class="stat-label">Internships</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-number" id="stat-cgpa">8.22</span>
+                            <span class="stat-label">CGPA</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-sidebar">
+                    <div class="sidebar-block">
+                        <h3 class="sidebar-title">Education</h3>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <h4>B.Tech CSE</h4>
+                                <span class="timeline-date">2025–Present</span>
+                                <p>L.J. Institute of Engg. & Tech.<br>Ahmedabad</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <h4>Diploma, Computer Engineering</h4>
+                                <span class="timeline-date">2022–2025</span>
+                                <p>R.C. Technical Institute. <br>Ahmedabad<br>CGPA: 8.22 ★</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="sidebar-block">
+                        <h3 class="sidebar-title">Certifications</h3>
+                        <ul class="cert-list">
+                            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg> Tata Cybersecurity Analyst (Forage)</li>
+                            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg> Python — Mastering the Essentials</li>
+                            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg> Java — Mastering the Fundamentals</li>
+                            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg> Intro to HTML, CSS &amp; JavaScript</li>
+                            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg> Python Internship Certificate</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="skills" data-animate>
+            <div class="container wrapper-box">
+                <h2 class="section-title">Skills & Technologies</h2>
+
+                <div class="skills-table">
+                    <div class="skill-row">
+                        <div class="skill-category">Languages</div>
+                        <div class="skill-tags">Python <span class="middot">·</span> JavaScript <span
+                                class="middot">·</span> Java <span class="middot">·</span> HTML5 <span
+                                class="middot">·</span> CSS3</div>
+                    </div>
+                    <div class="skill-row">
+                        <div class="skill-category">ML / Data</div>
+                        <div class="skill-tags">scikit-learn <span class="middot">·</span> Pandas <span
+                                class="middot">·</span> NumPy <span class="middot">·</span> Jupyter</div>
+                    </div>
+                    <div class="skill-row">
+                        <div class="skill-category">Web Dev</div>
+                        <div class="skill-tags">React <span class="middot">·</span> REST APIs <span
+                                class="middot">·</span> DOM <span class="middot">·</span> Responsive Design</div>
+                    </div>
+                    <div class="skill-row">
+                        <div class="skill-category">APIs & Tools</div>
+                        <div class="skill-tags">Google Gemini <span class="middot">·</span> WeatherAPI <span
+                                class="middot">·</span> Streamlit <span class="middot">·</span> Git</div>
+                    </div>
+                </div>
+
+                <div class="skill-bars">
+                    <div class="skill-bar-item" data-skill="Python" data-level="90">
+                        <div class="skill-label">
+                            <span>Python</span>
+                            <span class="skill-percent">0%</span>
+                        </div>
+                        <div class="skill-track">
+                            <div class="skill-fill" data-target="90"></div>
+                        </div>
+                    </div>
+                    <div class="skill-bar-item" data-skill="JavaScript" data-level="82">
+                        <div class="skill-label">
+                            <span>JavaScript</span>
+                            <span class="skill-percent">0%</span>
+                        </div>
+                        <div class="skill-track">
+                            <div class="skill-fill" data-target="82"></div>
+                        </div>
+                    </div>
+                    <div class="skill-bar-item" data-skill="Machine Learning" data-level="75">
+                        <div class="skill-label">
+                            <span>Machine Learning</span>
+                            <span class="skill-percent">0%</span>
+                        </div>
+                        <div class="skill-track">
+                            <div class="skill-fill" data-target="75"></div>
+                        </div>
+                    </div>
+                    <div class="skill-bar-item" data-skill="HTML & CSS" data-level="88">
+                        <div class="skill-label">
+                            <span>HTML & CSS</span>
+                            <span class="skill-percent">0%</span>
+                        </div>
+                        <div class="skill-track">
+                            <div class="skill-fill" data-target="88"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="marquee-wrapper">
+                <div class="marquee">
+                    <span class="marquee-item">Python</span>
+                    <span class="marquee-item">JavaScript</span>
+                    <span class="marquee-item">React</span>
+                    <span class="marquee-item">scikit-learn</span>
+                    <span class="marquee-item">Pandas</span>
+                    <span class="marquee-item">HTML5</span>
+                    <span class="marquee-item">CSS3</span>
+                    <span class="marquee-item">Git</span>
+                    <span class="marquee-item">Streamlit</span>
+                    <!-- Duplicate for infinite loop -->
+                    <span class="marquee-item">Python</span>
+                    <span class="marquee-item">JavaScript</span>
+                    <span class="marquee-item">React</span>
+                    <span class="marquee-item">scikit-learn</span>
+                    <span class="marquee-item">Pandas</span>
+                    <span class="marquee-item">HTML5</span>
+                    <span class="marquee-item">CSS3</span>
+                    <span class="marquee-item">Git</span>
+                    <span class="marquee-item">Streamlit</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Internships / Work Section -->
+        <section id="internships" class="work" data-animate>
+            <div class="container">
+                <h2 class="section-title">Work Experience</h2>
+
+                <div class="timeline work-timeline">
+                    <div class="timeline-line"></div>
+                    <!-- Internship 1 -->
+                    <div class="timeline-item timeline-item-cv">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-card work-card">
+                            <div class="work-header">
+                                <h3 class="work-company">INFOLABZ IT SERVICES</h3>
+                                <span class="work-role">Data Science Intern</span>
+                                <span class="work-date">June–August 2024</span>
+                            </div>
+                            <ul class="work-bullets">
+                                <li>Built and trained supervised ML models (Random Forest, Logistic Regression) for
+                                    internal
+                                    data classification tasks using scikit-learn and Pandas.</li>
+                                <li>Preprocessed and cleaned datasets of 10,000+ rows — handling missing values, feature
+                                    encoding, and train/test split pipelines.</li>
+                                <li>Contributed to end-to-end ML workflow: data ingestion → model training → evaluation
+                                    →
+                                    results reporting.</li>
+                                <li>Collaborated with the core ML team on 2 live production data tasks over the 3-month
+                                    internship.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Internship 2 -->
+                    <div class="timeline-item timeline-item-cv">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-card work-card">
+                            <div class="work-header">
+                                <h3 class="work-company">Praxware Technologies</h3>
+                                <span class="work-role">Python Web Dev Intern</span>
+                                <span class="work-date">August 2023</span>
+                            </div>
+                            <ul class="work-bullets">
+                                <li>Engineered Python-based web application features from scratch over a 15-day
+                                    intensive
+                                    sprint.</li>
+                                <li>Implemented RESTful API integrations and backend logic for web service endpoints
+                                    using
+                                    Python.</li>
+                                <li>Applied MVC architecture patterns and participated in daily agile standups with the
+                                    development team.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="projects" data-animate>
+            <div class="container">
+                <h2 class="section-title">Featured Projects</h2>
+                <div class="projects-grid" id="projects-container">
+                    <!-- Projects dynamically loaded here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact reveal">
+            <div class="container">
+                <h2 class="section-title">Let's Connect</h2>
+                <div class="contact-wrapper">
+                    <div class="contact-content-left">
+                        <p class="contact-description">
+                            Open to internships, freelance projects, and interesting problems.
+                            If you have something worth building, let's talk.
+                        </p>
+                        <div class="contact-methods">
+                            <a href="mailto:kevaljamnapara@gmail.com" class="contact-link">
+                                <svg class="contact-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <rect width="20" height="16" x="2" y="4" rx="2" />
+                                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                                </svg>
+                                <span>Email</span>
+                            </a>
+                            <a href="https://github.com/kevaljamnapara" target="_blank" rel="noopener noreferrer"
+                                class="contact-link">
+                                <svg class="contact-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path
+                                        d="M15 22v-4a4.8 4.8 0 0 0-1-3.02c3.14-.35 6.5-1.4 6.5-7a4.6 4.6 0 0 0-1.39-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 5.6 3.36 6.65 6.5 7a4.8 4.8 0 0 0-1 3.02V22" />
+                                    <path d="M9 20c-5 1.5-5-2.5-7-3" />
+                                </svg>
+                                <span>GitHub</span>
+                            </a>
+                            <a href="https://www.linkedin.com/in/kevaljamnapara" target="_blank"
+                                rel="noopener noreferrer" class="contact-link">
+                                <svg class="contact-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path
+                                        d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                                    <rect width="4" height="12" x="2" y="9" />
+                                    <circle cx="4" cy="4" r="2" />
+                                </svg>
+                                <span>LinkedIn</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="contact-form-wrapper">
+                        <!-- Contact form powered by Formspree -->
+                        <form class="contact-form" action="https://formspree.io/f/xwvnwdlj" method="POST">
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" id="name" name="name" required placeholder="Your Name">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="_replyto" required placeholder="Your Email">
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message" rows="5" required
+                                    placeholder="Your Message"></textarea>
+                            </div>
+                            <!-- Formspree hidden fields for better UX -->
+                            <input type="hidden" name="_subject" value="New Portfolio Contact Form Submission!">
+                            <button type="submit" class="btn-send submit-btn">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <span class="logo-text">kevaljamnapara.me</span>
+                <p>Built with HTML, CSS &amp; JavaScript · Deployed on GitHub Pages</p>
+            </div>
+            <div class="footer-links">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#projects">Projects</a>
+                <a href="https://github.com/kevaljamnapara" target="_blank">GitHub</a>
+                <a href="https://www.linkedin.com/in/kevaljamnapara" target="_blank">LinkedIn</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Keval Jamnapara. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" aria-label="Back to top">↑</button>
+
+    <div id="cursor-dot"></div>
+    <div id="cursor-ring"></div>
+
+    <script src="scripts/data.js"></script>
+    <script src="scripts/main.js"></script>
+</body>
+
+</html>
